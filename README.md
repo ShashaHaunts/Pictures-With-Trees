@@ -13,3 +13,5 @@ This was a given project assignment in my Basic Algorithms & Data Structures cou
 * void FlipHorizontal()
 * void FlipVertical()
 * void Prune(double tolerance)
+
+This project was completed by myself and another student, Gurjot.
