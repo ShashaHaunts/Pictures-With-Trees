@@ -27,7 +27,7 @@ double averageAlpInArea(PNG& im, unsigned int x, unsigned int y, pair<unsigned i
 void renderHelper(PNG& im, Node *tree) const;
 int sizePTree(Node *tree) const;
 int amountNumLeaves(Node *tree) const;
-void destroyTree(Node *&tree);
+void destroyTree(Node *tree);
 Node* copyTree(Node *tree);
 bool shouldPrune(Node *tree, double tolerance, Node *subroot);
 void pruneTheTree(double tolerance, Node *&subroot);

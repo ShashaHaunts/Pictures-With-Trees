@@ -1,4 +1,4 @@
-kkl/*
+/*
 *  File:        ptree.cpp
 *  Description: Implementation of a partitioning tree class for CPSC 221 PA3
 *  Date:        2022-03-03 01:53
@@ -25,10 +25,9 @@ typedef pair<unsigned int, unsigned int> pairUI;
 *  POST: all nodes allocated into the heap have been released.
 */
 void PTree::Clear() {
-  destroyTree(root->A);
-  destroyTree(root->B);
-  root->A = NULL;
-  root->B = NULL;
+  destroyTree(root);
+  root = NULL;
+ 
   
  
   
@@ -244,11 +243,11 @@ PTree::~PTree() {
 */
 PNG PTree::Render() const {
 
-  PNG *toBeReturned = new PNG(root->width, root->height);
-  renderHelper(*toBeReturned, root);
+  PNG toBeReturned = PNG(root->width, root->height);
+  renderHelper(toBeReturned, root);
 
  
-  return *toBeReturned;
+  return toBeReturned;
 }
 
 /*
@@ -446,7 +445,7 @@ int PTree::amountNumLeaves(Node *tree) const {
 
 }
 
-void PTree::destroyTree(Node *&tree) {
+void PTree::destroyTree(Node *tree) {
 
   if (tree == NULL) {
         return;
